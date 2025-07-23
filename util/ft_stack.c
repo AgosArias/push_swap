@@ -30,3 +30,13 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 	node -> next = new;
 	new -> prev = node;
 }
+
+void	ft_create_stack( char **str)
+{
+	char *temp = *str;
+	while (**str)
+	{
+		printf("[%s]", *str);
+		str++;
+	}
+}
