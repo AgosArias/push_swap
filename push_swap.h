@@ -29,6 +29,7 @@ typedef struct s_stack
 /* Lib Stack FT*/
 t_stack	*ft_stacknew(int content);
 void    ft_stackadd_back(t_stack **stack, t_stack *new);
+void	ft_create_stack( char **str);
 
 
 /*LIBFT*/

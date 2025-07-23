@@ -34,7 +34,7 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 	if(!*stack)
 	{
 		*stack = new;
-	       return ;	
+	    return ;	
 	}
 	node = *stack;
 	while (node -> next != NULL)
@@ -45,10 +45,23 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 
 void	ft_create_stack( char **str)
 {
-	char *temp = *str;
-	while (**str)
+	int num;
+	t_stack	*node;
+	
+	while (*str)
 	{
-		printf("[%s]", *str);
+		ft_stackadd_back(&node,ft_stacknew(atoi(*str)));
 		str++;
 	}
+
+	/*print stack a */
+	while(node)
+	{
+		num = node -> content;
+		printf("[%i]\n", num);
+		node = node -> next;
+	}
+	printf("-----\n");
+	printf("STACK A\n");
+
 }
