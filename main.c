@@ -14,23 +14,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	ft_create_stack( char **str)
-{
-	int num;
-	t_stack	*node;
-	
-	while (*str)
-	{
-		ft_stackadd_back(&node,ft_stacknew(atoi(*str)));
-		str++;
-	}
-	while(node)
-	{
-		num = node -> content;
-		printf("[%i]\n", num);
-		node = node -> next;
-	}
-}
 
 int	main( int argc, char **argv)
 {	
