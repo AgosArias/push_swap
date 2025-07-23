@@ -11,7 +11,7 @@ int main( int argc, char **argv)
     if(argc < 2)
         return(0);	
 	i = 1;
-	ft_fill_stack = if (argc = 3 && ft_strchar(argv[2], " "))
+	//ft_fill_stack = if (argc = 3 && ft_strchar(argv[2], " "))
 	
 		
 
