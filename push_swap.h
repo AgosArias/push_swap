@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 20:06:23 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/29 16:57:27 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/07/23 18:21:58 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,13 @@ typedef struct s_stack
 }   t_stack;
 
 /* Lib Stack FT*/
-t_stack	*ft_stacknew(void *content);
+t_stack	*ft_stacknew(int content);
+void    ft_stackadd_back(t_stack **stack, t_stack *new);
+
+
+/*LIBFT*/
 char	**ft_split(char const *s, char c);
+
 
 
 /*
