@@ -24,12 +24,14 @@ typedef struct s_stack
     int            content;
     struct s_stack   *next;
     struct s_stack   *prev;
+    int				index;
 }   t_stack;
 
 /* Lib Stack FT*/
 t_stack	*ft_stacknew(int content);
 void    ft_stackadd_back(t_stack **stack, t_stack *new);
 void	ft_create_stack( char **str);
+void ft_swap(t_stack *a, t_stack *b);
 
 
 /*LIBFT*/
