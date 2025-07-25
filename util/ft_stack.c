@@ -43,17 +43,34 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 	new -> prev = node;
 }
 
-void	ft_create_stack( char **str)
+void	ft_free_stack(t_stack **stack)
+{
+	t_stack *node;
+
+	if (!stack ||!*stack)
+		return ;        
+    while (*stack)
+    {
+        node = *stack;
+        *stack = (*stack)->next;
+        free(node);
+    }
+    *stack = NULL;
+}
+
+t_stack	*ft_create_stack( char **str)
 {
 	int num;
 	t_stack	*node;
+	t_stack	*node_tmp;
+
 	
 	if (!str || !*str|| !**str)
 	{
 		printf("[null]\n");
-		return ;
+		return (NULL);
 	}
-	
+	node = NULL;
 	while (*str)
 	{
 		ft_stackadd_back(&node,ft_stacknew(atoi(*str)));
@@ -61,13 +78,16 @@ void	ft_create_stack( char **str)
 	}
 
 	/*print stack a */
-	while(node)
+	node_tmp = node;
+	while(node_tmp)
 	{
-		num = node -> content;
+		num = node_tmp -> content;
 		printf("[%i]\n", num);
-		node = node -> next;
+		node_tmp = node_tmp -> next;
 	}
 	printf("-----\n");
 	printf("STACK A\n");
+
+	return (node);
 
 }

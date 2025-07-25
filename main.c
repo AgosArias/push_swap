@@ -18,6 +18,7 @@
 int	main( int argc, char **argv)
 {	
 	t_stack	*stack_a;
+	t_stack *stack_b;
 	char	**arg;
 
 	stack_a = NULL;
@@ -25,7 +26,10 @@ int	main( int argc, char **argv)
 		return (0);
 	argv++;
 	arg = argv;
-	ft_create_stack(arg);
+	stack_a = ft_create_stack(arg);
+	stack_b = ft_create_stack(NULL);
+	ft_free_stack(&stack_a);
+	ft_free_stack(&stack_b);
 	if (!stack_a)
 		return(0);
 	return (0);
