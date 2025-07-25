@@ -73,7 +73,7 @@ t_stack	*ft_create_stack( char **str)
 	node = NULL;
 	while (*str)
 	{
-		ft_stackadd_back(&node,ft_stacknew(atoi(*str)));
+		ft_stackadd_back(&node,ft_stacknew(ft_atoi(*str)));
 		str++;
 	}
 
