@@ -48,6 +48,12 @@ void	ft_create_stack( char **str)
 	int num;
 	t_stack	*node;
 	
+	if (!str || !*str|| !**str)
+	{
+		printf("[null]\n");
+		return ;
+	}
+	
 	while (*str)
 	{
 		ft_stackadd_back(&node,ft_stacknew(atoi(*str)));
