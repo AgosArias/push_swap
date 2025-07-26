@@ -21,7 +21,7 @@ t_stack	*ft_stacknew(int content)
 		return (NULL);
 	node->content = content;
 	node->next = NULL;
-    node->prev = NULL;
+	node->prev = NULL;
 	return (node);
 }
 
@@ -34,7 +34,7 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 	if(!*stack)
 	{
 		*stack = new;
-	    return ;	
+		return ;	
 	}
 	node = *stack;
 	while (node -> next != NULL)
@@ -48,22 +48,20 @@ void	ft_free_stack(t_stack **stack)
 	t_stack *node;
 
 	if (!stack ||!*stack)
-		return ;        
-    while (*stack)
-    {
-        node = *stack;
-        *stack = (*stack)->next;
-        free(node);
-    }
-    *stack = NULL;
+		return ;
+	while (*stack)
+	{
+		node = *stack;
+		*stack = (*stack)->next;
+		free(node);
+	}
+	*stack = NULL;
 }
 
 t_stack	*ft_create_stack( char **str)
 {
 	int num;
 	t_stack	*node;
-	t_stack	*node_tmp;
-
 	
 	if (!str || !*str|| !**str)
 	{
@@ -73,21 +71,32 @@ t_stack	*ft_create_stack( char **str)
 	node = NULL;
 	while (*str)
 	{
-		ft_stackadd_back(&node,ft_stacknew(ft_atoi(*str)));
+		num = ft_atoi(*str);
+		if (num != 0 || (num == 0 && **str == '0'))
+			ft_stackadd_back(&node,ft_stacknew(num));
+		else
+		{
+			ft_free_stack(&node);
+			return (NULL);
+		}
 		str++;
 	}
-
-	/*print stack a */
-	node_tmp = node;
-	while(node_tmp)
-	{
-		num = node_tmp -> content;
-		printf("[%i]\n", num);
-		node_tmp = node_tmp -> next;
-	}
-	printf("-----\n");
-	printf("STACK A\n");
-
 	return (node);
 
+}
+
+void	ft_print_stack(t_stack *stack)
+{
+	t_stack *node;
+
+	if (!stack)
+		return ;
+
+	node = stack;
+	while (node)
+	{
+		printf("[%d]\n", node->content);
+		node = node->next;
+	}
+	printf("-----\nSTACK A\n");
 }

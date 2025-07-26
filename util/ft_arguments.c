@@ -1,42 +1,35 @@
 #include "push_swap.h"
 
-int ft_check_duplicates(int **lst)
+int ft_check_duplicates(char **lst)
 {
-    int **lst_tmp;
+    char **lst_tmp;
 
     lst++;
-    while (**lst)
+    while (lst)
     {
         lst_tmp = lst++;
         lst_tmp--;
+        printf("%s", *lst);
         while (lst_tmp)
         {
-            if(lst_tmp == lst)
+            if(ft_atoi(*lst_tmp) == ft_atoi(*lst))
                 return(1);
             lst_tmp--;
         }
     }
     return(0);
 }
-
-int **ft_convert_lst(int argc,char **argv)
+void ft_free_strings(char **lst)
 {
-    int num;
-    char    **str;
+    char **tmp;
     
-    if (!argv || !*argv)
-        return (NULL);
-    if (argc == 1)
-        str = ft_split(argv,' ');
-    if (!str)
-        return (NULL);
-    while (str)
+    tmp = lst;
+    while (lst)
     {
-        num = ft_atoi(*str);
-        str++;
+        if(*lst)
+            free(*lst);
+        lst++;
     }
-    
-    
-    
-
+    if(tmp)
+        free(tmp);
 }

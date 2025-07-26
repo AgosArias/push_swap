@@ -26,19 +26,33 @@ int	main( int argc, char **argv)
 		return (0);
 	argv++;
 	if(argc == 2 && ft_strchr(*argv,' '))
-		arg = ft_split(*argv ,' ');
+	arg = ft_split(*argv ,' ');
 	else
 		arg = argv;
+	/*
+	if(ft_check_duplicates(arg) == 1)
+	{
+		
+	ft_free_strings(arg);
+	return(0);
+	}
+	*/
 	stack_a = ft_create_stack(arg);
+	if (!stack_a)
+		return(0);
 	stack_b = ft_create_stack(NULL);
+	printf("************%s**************", "Hola");
+	ft_free_strings(arg);
+	ft_print_stack(stack_a);
 	ft_free_stack(&stack_a);
+	ft_print_stack(stack_b);
 	ft_free_stack(&stack_b);
+
 	if (!stack_a)
 		return(0);
 	return (0);
 }
 
-//se tiene que ver como se guardan los argumentos si ./a.out 4 5 6 o ./a.out "4 5 6"
 /*Se tiene que validar que los datos esten correctos (que sean int)
 	while(i < argc)
 	{
