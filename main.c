@@ -25,7 +25,10 @@ int	main( int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	argv++;
-	arg = argv;
+	if(argc == 2 && ft_strchr(*argv,' '))
+		arg = ft_split(*argv ,' ');
+	else
+		arg = argv;
 	stack_a = ft_create_stack(arg);
 	stack_b = ft_create_stack(NULL);
 	ft_free_stack(&stack_a);
