@@ -20,7 +20,7 @@ int	ft_count_words(char const *s, char c)
 
 
 	if (!s)
-		return (NULL);
+		return (0);
 	count = 0;
 	boolean = 0;
 	i = 0;

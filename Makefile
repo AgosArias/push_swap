@@ -1,31 +1,56 @@
-NAME = push_swap
+# ╔════════════════════════════════════╗
+# ║          PUSH_SWAP MAKEFILE        ║
+# ╚════════════════════════════════════╝
 
-CC = cc
-FLAGS = -Wall -Werror -Wextra -I.
+# ──────🎯 TARGET NAME ──────
+NAME    := push_swap
 
-SRC = push_swap.c util/ft_stack.c main.c libft/ft_atoi.c libft/ft_isdigit.c
+# ──────⚙️ COMPILER & FLAGS ──────
+CC      := cc
+CFLAGS  := -Wall -Wextra -Werror -I.
 
-OBJ = $(SRC:.c=.o)
+# ──────📁 SOURCE FILES ──────
+SRC     := \
+    push_swap.c \
+    main.c \
+    util/ft_stack.c \
+    libft/ft_atoi.c \
+    libft/ft_isdigit.c \
+    libft/ft_strchar.c \
+    libft/ft_split.c \
+    libft/ft_substr.c \
+    libft/ft_strdup.c \
+    libft/ft_strlen.c
 
-INCLUDE = push_swap.h
+# ──────🧱 OBJECTS & HEADERS ──────
+OBJ     := $(SRC:.c=.o)
+DEPS    := push_swap.h
 
-RM = rm -f
+# ──────🧹 CLEANUP ──────
+RM      := rm -f
 
-.PHONY: all clean fclean re
+# ──────🔧 RULES ──────
+.PHONY: all clean fclean re test
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -o $@ $^
 
-%.o: %.c $(INCLUDE)
-	$(CC) $(FLAGS) -c -o $@ $<
+%.o: %.c $(DEPS)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
+	@echo "🧹 Objetos eliminados."
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "💥 Ejecutable eliminado."
 
 re: fclean all
 
+test: $(NAME)
+	@echo "🚀 Ejecutando test de ejemplo:"
+	@./$(NAME) "57 11 58 7 9 4 45"
+	@$(RM) $(OBJ)

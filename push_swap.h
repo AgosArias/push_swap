@@ -39,6 +39,10 @@ void	ft_free_stack(t_stack **stack);
 char	**ft_split(char const *s, char c);
 int	ft_isdigit(int c);
 int	ft_atoi(const char *str);
+char    *ft_strchr(char *s, int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strdup(char *src);
+size_t	ft_strlen(const char *str);
 
 
 
