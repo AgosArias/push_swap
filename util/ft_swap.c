@@ -5,6 +5,8 @@ void ft_swap(t_stack *a, t_stack *b)
 {
 	t_stack *x;
 
+	if (!a || !b)
+        return;
 	x -> content = a -> content;
 	x -> index = a -> index;
 	a -> content = b -> content;
