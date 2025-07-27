@@ -20,29 +20,28 @@ int	main( int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack *stack_b;
 	char	**arg;
+	int need_free;
 
 	stack_a = NULL;
 	if (argc < 2)
 		return (0);
 	argv++;
 	if(argc == 2 && ft_strchr(*argv,' '))
-	arg = ft_split(*argv ,' ');
-	else
-		arg = argv;
-	/*
-	if(ft_check_duplicates(arg) == 1)
 	{
-		
-	ft_free_strings(arg);
-	return(0);
+		arg = ft_split(*argv ,' ');
+		need_free = 1;
 	}
-	*/
+	else
+	{
+		arg = argv;
+		need_free = 0;
+	}
 	stack_a = ft_create_stack(arg);
 	if (!stack_a)
 		return(0);
-	stack_b = ft_create_stack(NULL);
-	printf("************%s**************", "Hola");
-	ft_free_strings(arg);
+	stack_b = NULL;
+	if (need_free)
+		ft_free_strings(arg);
 	ft_print_stack(stack_a);
 	ft_free_stack(&stack_a);
 	ft_print_stack(stack_b);
