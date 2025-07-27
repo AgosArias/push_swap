@@ -8,6 +8,9 @@ void pb(t_stack **a, t_stack **b)
     node = *a;
     *a = (*a)->next;
     node->next = *b;
+    node ->prev = NULL;
+    if (*b)
+        (*b) -> prev = node;
     *b = node;
     write(1,"pb\n", 3);
 }
@@ -20,6 +23,9 @@ void pa(t_stack **a, t_stack **b)
     node = *b;
     *b = (*b)->next;
     node->next = *a;
+    node ->prev = NULL;
+    if (*a)
+        (*a) -> prev = node;
     *a = node;
     write(1,"pa\n", 3);
 }   
