@@ -36,9 +36,19 @@ int	main( int argc, char **argv)
 		arg = argv;
 		need_free = 0;
 	}
+	if (ft_check_duplicates(arg) == 1)
+	{
+		if (need_free)
+			ft_free_strings(arg);
+		return (0);
+	}
 	stack_a = ft_create_stack(arg);
 	if (!stack_a)
+	{
+		if (need_free)
+			ft_free_strings(arg);
 		return(0);
+	}
 	stack_b = NULL;
 	if (need_free)
 		ft_free_strings(arg);

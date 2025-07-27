@@ -2,34 +2,36 @@
 
 int ft_check_duplicates(char **lst)
 {
-    char **lst_tmp;
+	int x; 
+	int y;
 
-    lst++;
-    while (lst)
-    {
-        lst_tmp = lst++;
-        lst_tmp--;
-        printf("%s", *lst);
-        while (lst_tmp)
-        {
-            if(ft_atoi(*lst_tmp) == ft_atoi(*lst))
-                return(1);
-            lst_tmp--;
-        }
-    }
-    return(0);
+	if (!lst)
+		return (0);
+	x = 0;
+	while (lst[x])
+	{
+		y = x +1;
+		while (lst[y])
+		{
+		    if (ft_atoi(lst[x]) == ft_atoi(lst[y]))
+				return (1);
+			y++;
+		}
+		x++;
+	}
+	return (0);
 }
 void ft_free_strings(char **lst)
 {
-    char **tmp;
-    
-    tmp = lst;
-    while (lst)
-    {
-        if(*lst)
-            free(*lst);
-        lst++;
-    }
-    if(tmp)
-        free(tmp);
+	char **tmp;
+	
+	tmp = lst;
+	while (lst && *lst)
+	{
+		if (*lst)
+			free(*lst);
+		lst++;
+	}
+	if(tmp)
+		free(tmp);
 }
