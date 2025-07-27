@@ -42,8 +42,13 @@ void ft_swap(t_stack *a, t_stack *b);
 void	sa(t_stack *stack);
 void	sb(t_stack *stack);
 void	ss(t_stack *stack_a, t_stack *stack_b);
+void pa(t_stack **a, t_stack **b);
 void pb(t_stack **a, t_stack **b);
 t_stack	*ra(t_stack *a);
+t_stack	*rb(t_stack *b);
+void	rr(t_stack **a, t_stack **b);
+t_stack	*ft_rotate(t_stack *stack);
+
 
 
 /*LIBFT*/

@@ -2,26 +2,31 @@
 
 t_stack	*ra(t_stack *a)
 {
-	t_stack	*actual;
-	t_stack *first;
-
-    if (!a)
+	if (!a)
 		return (NULL);
-	actual = a;
-	first = a;
-	while (a -> next)
-	{
-		a -> prev = a ->next;
-		a -> next = actual;
-		a = a -> prev;
-		actual = a -> prev;
-	}
-	a -> prev = NULL;
-	a -> next = actual;
-	first -> next = NULL; 
+	a = ft_rotate(a);
     write(1,"ra\n",3);
 	return(a);
 
+} 
+
+t_stack	*rb(t_stack *b)
+{
+	if (!b)
+		return (NULL);
+	b = ft_rotate(b);
+    write(1,"rb\n",3);
+	return(b);
+
+} 
+
+void	rr(t_stack **a, t_stack **b)
+{
+	if (!b || !a || !*b || !*a)
+		return ;
+	*a = ft_rotate(*a);
+	*b = ft_rotate(*b);
+    write(1,"rr\n",3);
 } 
 
 t_stack	*ft_rotate(t_stack *stack)
