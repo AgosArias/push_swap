@@ -100,3 +100,11 @@ void	ft_print_stack(t_stack *stack)
 	}
 	printf("-----\nSTACK A\n");
 }
+void    ft_stackadd_front(t_stack **stack, t_stack *new)
+{
+	if (stack && new)
+    {
+        new->next = *stack;
+        *stack = new;
+    }
+}

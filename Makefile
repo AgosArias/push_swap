@@ -15,6 +15,8 @@ SRC     := \
     main.c \
     util/ft_stack.c \
     util/ft_arguments.c \
+    util/ft_swap.c \
+    util/ft_push.c \
     libft/ft_atoi.c \
     libft/ft_isdigit.c \
     libft/ft_strchar.c \
@@ -53,5 +55,5 @@ re: fclean all
 
 test: $(NAME)
 	@echo "🚀 Ejecutando test de ejemplo:"
-	@./$(NAME) "57 11 58 0 -9 4 45"
+	@./$(NAME) 2 1 3 6 5 8
 	@$(RM) $(OBJ)

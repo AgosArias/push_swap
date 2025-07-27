@@ -52,6 +52,12 @@ int	main( int argc, char **argv)
 	stack_b = NULL;
 	if (need_free)
 		ft_free_strings(arg);
+	
+	ft_print_stack(stack_a);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+
 	ft_print_stack(stack_a);
 	ft_free_stack(&stack_a);
 	ft_print_stack(stack_b);

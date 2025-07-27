@@ -31,11 +31,18 @@ typedef struct s_stack
 t_stack	*ft_stacknew(int content);
 void    ft_stackadd_back(t_stack **stack, t_stack *new);
 t_stack	*ft_create_stack( char **str);
-void ft_swap(t_stack *a, t_stack *b);
 void	ft_free_stack(t_stack **stack);
 void ft_free_strings(char **lst);
 int ft_check_duplicates(char **lst);
 void	ft_print_stack(t_stack *stack);
+
+
+/*Operations */
+void ft_swap(t_stack *a, t_stack *b);
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void pb(t_stack **a, t_stack **b);
 
 
 /*LIBFT*/

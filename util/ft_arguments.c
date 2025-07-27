@@ -10,7 +10,7 @@ int ft_check_duplicates(char **lst)
 	x = 0;
 	while (lst[x])
 	{
-		y = x +1;
+		y = x + 1;
 		while (lst[y])
 		{
 		    if (ft_atoi(lst[x]) == ft_atoi(lst[y]))

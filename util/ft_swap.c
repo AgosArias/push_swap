@@ -1,5 +1,4 @@
 #include "push_swap.h"
-#include <stdio.h>
 
 void ft_swap(t_stack *a, t_stack *b)
 {
@@ -7,6 +6,7 @@ void ft_swap(t_stack *a, t_stack *b)
 
 	if (!a || !b)
         return;
+	x = ft_stacknew(0);
 	x -> content = a -> content;
 	x -> index = a -> index;
 	a -> content = b -> content;
@@ -15,3 +15,27 @@ void ft_swap(t_stack *a, t_stack *b)
 	b -> index = x -> index;
 }
 
+void	sa(t_stack *stack)
+{
+	if(!stack || !stack->next)
+		return ;
+	ft_swap(stack, stack->next);
+	write(1,"sa",2);
+}
+
+void	sb(t_stack *stack)
+{
+	if(!stack || !stack->next)
+		return ;
+	ft_swap(stack, stack->next);
+	write(1,"sb",2);
+}
+
+void	ss(t_stack *stack_a, t_stack *stack_b)
+{
+	if(!stack_a || !stack_a->next || !stack_b || !stack_b->next)
+		return ;
+	ft_swap(stack_a, stack_a->next);
+	ft_swap(stack_b, stack_b->next);
+	write(1,"ss",2);
+}
