@@ -21,33 +21,38 @@
 
 typedef struct s_stack
 {
-    int            content;
-    struct s_stack   *next;
-    struct s_stack   *prev;
-    int				index;
-}   t_stack;
+	int				content;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+	int				index;
+}	t_stack;
 
 /* Lib Stack FT*/
 t_stack	*ft_stacknew(int content);
-void    ft_stackadd_back(t_stack **stack, t_stack *new);
+void	ft_stackadd_back(t_stack **stack, t_stack *new);
 t_stack	*ft_create_stack( char **str);
 void	ft_free_stack(t_stack **stack);
-void ft_free_strings(char **lst);
-int ft_check_duplicates(char **lst);
+void	ft_free_strings(char **lst);
+int	ft_check_duplicates(char **lst);
 void	ft_print_stack(t_stack *stack);
 
 
 /*Operations */
-void ft_swap(t_stack *a, t_stack *b);
+void	ft_swap(t_stack *a, t_stack *b);
 void	sa(t_stack *stack);
 void	sb(t_stack *stack);
 void	ss(t_stack *stack_a, t_stack *stack_b);
-void pa(t_stack **a, t_stack **b);
-void pb(t_stack **a, t_stack **b);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
 t_stack	*ra(t_stack *a);
 t_stack	*rb(t_stack *b);
 void	rr(t_stack **a, t_stack **b);
 t_stack	*ft_rotate(t_stack *stack);
+t_stack	*ft_reverse_rotate(t_stack *stack);
+void	rrr(t_stack **a, t_stack **b);
+t_stack	*rrb(t_stack *b);
+t_stack	*rra(t_stack *a);
+
 
 
 

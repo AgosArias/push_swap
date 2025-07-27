@@ -13,7 +13,7 @@ int ft_check_duplicates(char **lst)
 		y = x + 1;
 		while (lst[y])
 		{
-		    if (ft_atoi(lst[x]) == ft_atoi(lst[y]))
+			if (ft_atoi(lst[x]) == ft_atoi(lst[y]))
 				return (1);
 			y++;
 		}
@@ -21,10 +21,11 @@ int ft_check_duplicates(char **lst)
 	}
 	return (0);
 }
-void ft_free_strings(char **lst)
+
+void	ft_free_strings(char **lst)
 {
-	char **tmp;
-	
+	char	**tmp;
+
 	tmp = lst;
 	while (lst && *lst)
 	{
@@ -32,6 +33,6 @@ void ft_free_strings(char **lst)
 			free(*lst);
 		lst++;
 	}
-	if(tmp)
+	if (tmp)
 		free(tmp);
 }

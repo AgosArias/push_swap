@@ -1,11 +1,11 @@
 #include "push_swap.h"
 
-void ft_swap(t_stack *a, t_stack *b)
+void	ft_swap(t_stack *a, t_stack *b)
 {
-	t_stack *x;
+	t_stack	*x;
 
 	if (!a || !b)
-        return;
+		return ;
 	x = ft_stacknew(0);
 	x -> content = a -> content;
 	x -> index = a -> index;
@@ -17,25 +17,25 @@ void ft_swap(t_stack *a, t_stack *b)
 
 void	sa(t_stack *stack)
 {
-	if(!stack || !stack->next)
+	if (!stack || !stack->next)
 		return ;
 	ft_swap(stack, stack->next);
-	write(1,"sa",2);
+	write(1,"sa\n",3);
 }
 
 void	sb(t_stack *stack)
 {
-	if(!stack || !stack->next)
+	if (!stack || !stack->next)
 		return ;
 	ft_swap(stack, stack->next);
-	write(1,"sb",2);
+	write(1,"sb\n",3);
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
-	if(!stack_a || !stack_a->next || !stack_b || !stack_b->next)
+	if (!stack_a || !stack_a->next || !stack_b || !stack_b->next)
 		return ;
 	ft_swap(stack_a, stack_a->next);
 	ft_swap(stack_b, stack_b->next);
-	write(1,"ss",2);
+	write(1,"ss\n",3);
 }
