@@ -17,6 +17,7 @@ SRC     := \
     util/ft_arguments.c \
     util/ft_swap.c \
     util/ft_push.c \
+    util/ft_rotate.c \
     libft/ft_atoi.c \
     libft/ft_isdigit.c \
     libft/ft_strchar.c \

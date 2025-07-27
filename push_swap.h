@@ -43,6 +43,7 @@ void	sa(t_stack *stack);
 void	sb(t_stack *stack);
 void	ss(t_stack *stack_a, t_stack *stack_b);
 void pb(t_stack **a, t_stack **b);
+void	ra(t_stack **a);
 
 
 /*LIBFT*/
