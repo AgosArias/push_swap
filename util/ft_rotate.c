@@ -31,22 +31,21 @@ void	rr(t_stack **a, t_stack **b)
 
 t_stack	*ft_rotate(t_stack *stack)
 {
-	t_stack	*actual;
+	t_stack	*node;
 	t_stack *first;
 
-    if (!stack)
-		return (NULL);
-	actual = stack;
+	if(!stack)
+		return (NULL);	
+	node = stack;
+	stack = stack ->next;
 	first = stack;
-	while (stack -> next)
-	{
-		stack -> prev = stack ->next;
-		stack -> next = actual;
-		stack = stack -> prev;
-		actual = stack -> prev;
-	}
 	stack -> prev = NULL;
-	stack -> next = actual;
-	first -> next = NULL; 
-	return(stack);
-}  
+	while (stack ->next)
+	{
+		stack = stack ->next;
+	}
+	stack -> next = node;
+	node ->prev = stack;
+	node ->next = NULL;
+	return(first);
+}
