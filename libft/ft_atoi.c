@@ -45,7 +45,7 @@ int	ft_atoi(const char *str)
 		else if (ft_isdigit(str[i]) == 1)
 			num = num * 10 + (str[i] - '0');
 		else
-			return (num * symbol);
+			return (0);
 		i++;
 	}
 	return (num * symbol);
