@@ -57,7 +57,7 @@ int	main( int argc, char **argv)
 	pb(&stack_a, &stack_b);
 	pb(&stack_a, &stack_b);
 	pb(&stack_a, &stack_b);
-	ra(&stack_a);
+	stack_a = ra(stack_a);
 	ft_print_stack(stack_a);
 	ft_free_stack(&stack_a);
 	ft_print_stack(stack_b);
