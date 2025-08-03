@@ -19,6 +19,7 @@ SRC     := \
     util/ft_push.c \
     util/ft_rotate.c \
     util/ft_reverse_rotate.c \
+    util/ft_add_index.c \
     libft/ft_atoi.c \
     libft/ft_isdigit.c \
     libft/ft_strchar.c \

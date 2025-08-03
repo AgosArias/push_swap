@@ -35,6 +35,9 @@ void	ft_free_stack(t_stack **stack);
 void	ft_free_strings(char **lst);
 int	ft_check_duplicates(char **lst);
 void	ft_print_stack(t_stack *stack);
+t_stack	*ft_min(t_stack *stack);
+int	ft_add_index(t_stack *stack);
+
 
 
 /*Operations */
