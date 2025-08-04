@@ -54,11 +54,8 @@ int	main( int argc, char **argv)
 		ft_free_strings(arg);
 
 	ft_print_stack(stack_a);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	pb(&stack_a, &stack_b);
-	rr(&stack_a, &stack_b);
-	rrr(&stack_a, &stack_b);
+	ft_add_index(stack_a);
+	ft_sort(&stack_a, &stack_b);
 	ft_print_stack(stack_a);
 	ft_free_stack(&stack_a);
 	ft_print_stack(stack_b);
@@ -70,8 +67,5 @@ int	main( int argc, char **argv)
 }
 
 /*
-Verifica si se han proporcionado suficientes argumentos en la línea de comandos.
-Verifica si la pila stack_a tiene duplicados utilizando la función ft_be_duplicated.
-Verifica si la pila stack_a está ordenada utilizando la función be_sorted.
 Si la pila no está ordenada, llama a la función ft_sort para ordenarla.
 */
