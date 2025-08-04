@@ -20,7 +20,8 @@ SRC     := \
     util/ft_rotate.c \
     util/ft_reverse_rotate.c \
     util/ft_add_index.c \
-    libft/ft_atoi.c \
+    util/ft_sorted.c \
+\    libft/ft_atoi.c \
     libft/ft_isdigit.c \
     libft/ft_strchar.c \
     libft/ft_split.c \
@@ -58,5 +59,5 @@ re: fclean all
 
 test: $(NAME)
 	@echo "🚀 Ejecutando test de ejemplo:"
-	@./$(NAME) 2 1 3 6 5 8
+	@./$(NAME) 0 2 1
 	@$(RM) $(OBJ)
