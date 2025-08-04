@@ -37,6 +37,18 @@ int	ft_check_duplicates(char **lst);
 void	ft_print_stack(t_stack *stack);
 t_stack	*ft_min(t_stack *stack);
 int	ft_add_index(t_stack *stack);
+int ft_be_sorted(t_stack *stack);
+int	ft_stacksize(t_stack *stack);
+void	ft_sort(t_stack **stack_a, t_stack **stack_b);
+
+//funtions to check if stack is need to be changed
+int	ft_be_swapped_a(t_stack *stack);
+int	ft_be_swapped_b(t_stack *stack);
+int	ft_head_is_min(t_stack *stack);
+
+
+
+
 
 
 
