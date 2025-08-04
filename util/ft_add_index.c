@@ -14,7 +14,6 @@ int	ft_add_index(t_stack *stack)
 	while (min)
 	{
 		min -> index = index++;
-		printf("min: %d\nindex %d\n", min->content,min->index);
 		min = ft_min(node);
 
 	}
