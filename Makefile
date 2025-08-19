@@ -58,6 +58,6 @@ fclean: clean
 re: fclean all
 
 test: $(NAME)
-	@echo "🚀 Ejecutando test de ejemplo:"
-	@./$(NAME) 0 2 1
 	@$(RM) $(OBJ)
+	@echo "🚀 Ejecutando test de ejemplo:"
+	@bash -c './$(NAME) $$(seq 1 100 | shuf)'

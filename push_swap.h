@@ -25,6 +25,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 	int				index;
+	int				position;
 }	t_stack;
 
 /* Lib Stack FT*/
@@ -45,6 +46,10 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b);
 int	ft_be_swapped_a(t_stack *stack);
 int	ft_be_swapped_b(t_stack *stack);
 int	ft_head_is_min(t_stack *stack);
+int	ft_head_is_max(t_stack *stack);
+void	ft_sort_3(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_4(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_stack(t_stack **stack_a, t_stack **stack_b, int chunck);
 
 
 

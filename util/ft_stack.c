@@ -22,6 +22,8 @@ t_stack	*ft_stacknew(int content)
 	node->content = content;
 	node->next = NULL;
 	node->prev = NULL;
+	node->index = 0;
+	node->position = 0;
 	return (node);
 }
 
@@ -95,7 +97,7 @@ void	ft_print_stack(t_stack *stack)
 	node = stack;
 	while (node)
 	{
-		printf("[%d]\n", node->content);
+		printf("[%d]\n", node->index);
 		node = node->next;
 	}
 	printf("-----\nSTACK A\n");

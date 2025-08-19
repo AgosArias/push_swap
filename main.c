@@ -53,10 +53,10 @@ int	main( int argc, char **argv)
 	if (need_free)
 		ft_free_strings(arg);
 
-	ft_print_stack(stack_a);
+	//ft_print_stack(stack_a);
 	ft_add_index(stack_a);
-	ft_sort(&stack_a, &stack_b);
 	ft_print_stack(stack_a);
+	ft_sort(&stack_a, &stack_b);
 	ft_free_stack(&stack_a);
 	ft_print_stack(stack_b);
 	ft_free_stack(&stack_b);
