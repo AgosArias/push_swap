@@ -1,59 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   ft_add_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 18:44:25 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/09/01 18:49:19 by aarias-d         ###   ########.fr       */
+/*   Created: 2025/09/01 18:53:22 by aarias-d          #+#    #+#             */
+/*   Updated: 2025/09/01 18:53:48 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	ft_free_stack(t_stack **stack)
-{
-	t_stack *node;
-
-	if (!stack ||!*stack)
-		return ;
-	while (*stack)
-	{
-		node = *stack;
-		*stack = (*stack)->next;
-		free(node);
-	}
-	*stack = NULL;
-}
-
-void	ft_print_stack(t_stack *stack)
+int	ft_add_index(t_stack *stack)
 {
 	t_stack	*node;
+	t_stack	*min;
+	int		index;
 
 	if (!stack)
-		return ;
-
+		return (0);
 	node = stack;
-	while (node)
+	index = 1;
+	min = ft_min(stack);
+	while (min)
 	{
-		printf("[%d]\n", node->index);
-		node = node->next;
+		min -> index = index++;
+		min = ft_min(node);
+
 	}
-	printf("-----\nSTACK A\n");
+	return (1);
 }
 
-int	ft_stacksize(t_stack *stack)
+t_stack	*ft_min(t_stack *stack)
 {
-	int		size;
 	t_stack	*node;
+	t_stack	*min;
 
-	size = 0;
+	if (!stack)
+		return (NULL);
 	node = stack;
+	min = NULL;
 	while (node)
 	{
-		size++;
-		node = node->next;
+		if (!(node -> index) && ( !min || min ->content > node ->content )  )
+			min = node;
+		node = node -> next;
 	}
-	return (size);
+	if (!min || min -> index)
+		return (NULL);
+	return (min);
 }
