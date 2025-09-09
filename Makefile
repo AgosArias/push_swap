@@ -7,7 +7,7 @@ NAME    := push_swap
 
 # ──────⚙️ COMPILER & FLAGS ──────
 CC      := cc
-CFLAGS  := -Wall -Wextra -Werror -I.
+CFLAGS  := -Wall -Wextra -Werror -Iincludes
 
 # ──────📁 SOURCE FILES ──────
 SRC := $(shell find . -type f -name "*.c")
