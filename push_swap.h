@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:44:53 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/09/01 18:44:56 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/09/09 17:15:46 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_stack	*ft_create_stack( char **str);
 void	ft_free_stack(t_stack **stack);
 void	ft_free_strings(char **lst);
 int	ft_check_duplicates(char **lst);
+char**	get_arguments(char** arg, int argc);
 void	ft_print_stack(t_stack *stack);
 t_stack	*ft_min(t_stack *stack);
 int	ft_add_index(t_stack *stack);
@@ -85,6 +86,7 @@ char    *ft_strchr(char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(char *src);
 size_t	ft_strlen(const char *str);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 
 
 

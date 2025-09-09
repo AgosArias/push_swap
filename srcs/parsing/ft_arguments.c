@@ -36,3 +36,28 @@ void	ft_free_strings(char **lst)
 	if (tmp)
 		free(tmp);
 }
+
+char**	get_arguments(char** arg, int argc)
+{
+	char **arguments;
+	int 	i;
+	if (argc == 1 && ft_strchr(*arg,' '))
+		arguments = ft_split(*arg ,' ');
+	else
+	{
+		arguments = (char **)malloc(sizeof(char *) * argc);
+		i = 0;		
+		while (*arg)
+		{
+			arguments[i] = ft_strdup(*arg);
+			i++;
+			arg++;
+		}
+	}
+	if (ft_check_duplicates(arguments) == 1)
+	{
+		ft_free_strings(arguments);
+		return (NULL);
+	}
+	return(arguments);
+}

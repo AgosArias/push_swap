@@ -6,7 +6,7 @@
 /*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:39:54 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/07/23 18:16:20 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/09/09 17:21:34 by aarias-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,40 +20,17 @@ int	main( int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	**arg;
-	int		need_free;
 
 	stack_a = NULL;
 	if (argc < 2)
 		return (0);
 	argv++;
-	if (argc == 2 && ft_strchr(*argv,' '))
-	{
-		arg = ft_split(*argv ,' ');
-		need_free = 1;
-	}
-	else
-	{
-		arg = argv;
-		need_free = 0;
-	}
-	if (ft_check_duplicates(arg) == 1)
-	{
-		if (need_free)
-			ft_free_strings(arg);
-		return (0);
-	}
+	arg = get_arguments(argv,argc - 1);	
 	stack_a = ft_create_stack(arg);
+	ft_free_strings(arg);
 	if (!stack_a)
-	{
-		if (need_free)
-			ft_free_strings(arg);
 		return (0);
-	}
 	stack_b = NULL;
-	if (need_free)
-		ft_free_strings(arg);
-
-	//ft_print_stack(stack_a);
 	ft_add_index(stack_a);
 	ft_print_stack(stack_a);
 	ft_sort(&stack_a, &stack_b);
