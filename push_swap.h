@@ -27,6 +27,10 @@ typedef struct s_stack
 	struct s_stack	*prev;
 	int				index;
 	int				position;
+    int				target_pos;
+    int				cost_a;
+    int				cost_b;
+    int				total_cost;
 }	t_stack;
 
 /* Lib Stack FT*/
