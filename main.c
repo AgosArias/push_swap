@@ -28,9 +28,10 @@ int	main( int argc, char **argv)
 	if (!stack_a)
 		return (0);
 	stack_b = NULL;
-    ft_add_index(stack_a);
+	ft_add_index(stack_a);
 	ft_sort(&stack_a, &stack_b);
-    ft_free_stack(&stack_a);
-    ft_free_stack(&stack_b);
-    return (0);
+	ft_print_stack(stack_a);
+	ft_free_stack(&stack_a);
+	ft_free_stack(&stack_b);
+	return (0);
 }

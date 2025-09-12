@@ -17,7 +17,7 @@ t_stack	*ra(t_stack *a)
 	if (!a)
 		return (NULL);
 	a = ft_rotate(a);
-	write(1,"ra\n",3);
+	write(1, "ra\n", 3);
 	return (a);
 }
 
@@ -36,7 +36,7 @@ void	rr(t_stack **a, t_stack **b)
 		return ;
 	*a = ft_rotate(*a);
 	*b = ft_rotate(*b);
-	write(1,"rr\n",3);
+	write(1, "rr\n", 3);
 }
 
 t_stack	*ft_rotate(t_stack *stack)
@@ -45,7 +45,7 @@ t_stack	*ft_rotate(t_stack *stack)
 	t_stack	*first;
 
 	if (!stack)
-		return (NULL);	
+		return (NULL);
 	node = stack;
 	stack = stack ->next;
 	first = stack;

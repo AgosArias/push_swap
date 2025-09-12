@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/05 17:51:51 by aarias-d          #+#    #+#             */
+/*   Updated: 2025/05/29 17:23:14 by aarias-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int ft_check_duplicates(char **lst)
+int	ft_check_duplicates(char **lst)
 {
-	int x; 
-	int y;
+	int	x;
+	int	y;
 
 	if (!lst)
 		return (0);
@@ -37,12 +49,13 @@ void	ft_free_strings(char **lst)
 		free(tmp);
 }
 
-char**	get_arguments(char** arg, int argc)
+char	**get_arguments(char **arg, int argc)
 {
-	char **arguments;
-	int 	i;
-	if (argc == 1 && ft_strchr(*arg,' '))
-		arguments = ft_split(*arg ,' ');
+	char	**arguments;
+	int		i;
+
+	if (argc == 1 && ft_strchr(*arg, ' '))
+		arguments = ft_split(*arg, ' ');
 	else
 	{
 		arguments = (char **)malloc(sizeof(char *) * argc);
@@ -59,5 +72,5 @@ char**	get_arguments(char** arg, int argc)
 		ft_free_strings(arguments);
 		return (NULL);
 	}
-	return(arguments);
+	return (arguments);
 }

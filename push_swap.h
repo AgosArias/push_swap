@@ -47,6 +47,8 @@ int	ft_add_index(t_stack *stack);
 int ft_be_sorted(t_stack *stack);
 int	ft_stacksize(t_stack *stack);
 void	ft_sort(t_stack **stack_a, t_stack **stack_b);
+void ft_normalize_stack(t_stack **stack);
+
 
 //funtions to check if stack is need to be changed
 int	ft_be_swapped_a(t_stack *stack);
@@ -79,32 +81,14 @@ void	rrr(t_stack **a, t_stack **b);
 t_stack	*rrb(t_stack *b);
 t_stack	*rra(t_stack *a);
 
-
-
-
 /*LIBFT*/
 char	**ft_split(char const *s, char c);
-int	ft_isdigit(int c);
-int	ft_atoi(const char *str);
-char    *ft_strchr(char *s, int c);
+int		ft_isdigit(int c);
+int		ft_atoi(const char *str);
+char	*ft_strchr(char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(char *src);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-
-
-
-
-/*
-t_list  *ft_lstnew(int content);
-//void    ft_lstadd_front(t_list **lst, t_list *new);
-int     ft_lstsize(t_list *lst);
-t_list  *ft_lstlast(t_list *lst);
-//void    ft_lstadd_back(t_list **lst, t_list *new);
-void    ft_lstdelone(t_list *lst, void (*del)(void*));
-void    ft_lstclear(t_list **lst, void (*del)(void*));
-void    ft_lstiter(t_list *lst, void (*f)(void *));
-t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-*/
 
 #endif

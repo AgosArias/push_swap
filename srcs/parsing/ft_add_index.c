@@ -43,7 +43,7 @@ t_stack	*ft_min(t_stack *stack)
 	min = NULL;
 	while (node)
 	{
-		if (!(node -> index) && ( !min || min ->content > node ->content )  )
+		if (!(node -> index) && (!min || min ->content > node ->content))
 			min = node;
 		node = node -> next;
 	}
