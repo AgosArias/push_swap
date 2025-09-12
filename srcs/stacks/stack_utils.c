@@ -57,3 +57,19 @@ int	ft_stacksize(t_stack *stack)
 	}
 	return (size);
 }
+
+int	ft_be_sorted(t_stack *stack)
+{
+	t_stack	*node;
+
+	if (!stack || !stack->next)
+		return (1);
+	node = stack;
+	while (node->next)
+	{
+		if (node->index > node->next->index)
+			return (0);
+		node = node->next;
+	}
+	return (1);
+}
