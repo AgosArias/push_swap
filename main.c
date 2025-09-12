@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-
 
 int	main( int argc, char **argv)
 {
@@ -25,24 +22,15 @@ int	main( int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	argv++;
-	arg = get_arguments(argv,argc - 1);	
+	arg = get_arguments(argv, argc - 1);
 	stack_a = ft_create_stack(arg);
 	ft_free_strings(arg);
 	if (!stack_a)
 		return (0);
 	stack_b = NULL;
-	ft_add_index(stack_a);
-	ft_print_stack(stack_a);
+    ft_add_index(stack_a);
 	ft_sort(&stack_a, &stack_b);
-	ft_free_stack(&stack_a);
-	ft_print_stack(stack_b);
-	ft_free_stack(&stack_b);
-
-	if (!stack_a)
-		return (0);
-	return (0);
+    ft_free_stack(&stack_a);
+    ft_free_stack(&stack_b);
+    return (0);
 }
-
-/*
-Si la pila no está ordenada, llama a la función ft_sort para ordenarla.
-*/
