@@ -18,7 +18,6 @@ int	ft_count_words(char const *s, char c)
 	int	boolean;
 	int	i;
 
-
 	if (!s)
 		return (0);
 	count = 0;

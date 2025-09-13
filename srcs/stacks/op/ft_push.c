@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../push_swap.h"
+#include "push_swap.h"
 
 void	pb(t_stack **a, t_stack **b)
 {
@@ -25,7 +25,7 @@ void	pb(t_stack **a, t_stack **b)
 	if (*b)
 		(*b)-> prev = node;
 	*b = node;
-	write(1,"pb\n", 3);
+	write(1, "pb\n", 3);
 }
 
 void	pa(t_stack **a, t_stack **b)
@@ -41,6 +41,5 @@ void	pa(t_stack **a, t_stack **b)
 	if (*a)
 		(*a)-> prev = node;
 	*a = node;
-	write(1,"pa\n", 3);
+	write(1, "pa\n", 3);
 }
-

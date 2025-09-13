@@ -14,7 +14,7 @@
 
 void	ft_free_stack(t_stack **stack)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	if (!stack ||!*stack)
 		return ;
@@ -33,7 +33,6 @@ void	ft_print_stack(t_stack *stack)
 
 	if (!stack)
 		return ;
-
 	node = stack;
 	while (node)
 	{

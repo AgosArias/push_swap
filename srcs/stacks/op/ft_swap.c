@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_add_index.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/01 18:53:22 by aarias-d          #+#    #+#             */
+/*   Updated: 2025/09/01 18:53:48 by aarias-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_swap(t_stack *a, t_stack *b)
@@ -20,7 +32,7 @@ void	sa(t_stack *stack)
 	if (!stack || !stack->next)
 		return ;
 	ft_swap(stack, stack->next);
-	write(1,"sa\n",3);
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack *stack)
@@ -28,7 +40,7 @@ void	sb(t_stack *stack)
 	if (!stack || !stack->next)
 		return ;
 	ft_swap(stack, stack->next);
-	write(1,"sb\n",3);
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
@@ -37,5 +49,5 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 		return ;
 	ft_swap(stack_a, stack_a->next);
 	ft_swap(stack_b, stack_b->next);
-	write(1,"ss\n",3);
+	write(1, "ss\n", 3);
 }

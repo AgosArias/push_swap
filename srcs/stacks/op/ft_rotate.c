@@ -26,7 +26,7 @@ t_stack	*rb(t_stack *b)
 	if (!b)
 		return (NULL);
 	b = ft_rotate(b);
-	write(1,"rb\n",3);
+	write(1, "rb\n", 3);
 	return (b);
 }
 
