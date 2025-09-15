@@ -10,34 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../push_swap.h"
-
-t_stack	*ra(t_stack *a)
-{
-	if (!a)
-		return (NULL);
-	a = ft_rotate(a);
-	write(1, "ra\n", 3);
-	return (a);
-}
-
-t_stack	*rb(t_stack *b)
-{
-	if (!b)
-		return (NULL);
-	b = ft_rotate(b);
-	write(1, "rb\n", 3);
-	return (b);
-}
-
-void	rr(t_stack **a, t_stack **b)
-{
-	if (!b || !a || !*b || !*a)
-		return ;
-	*a = ft_rotate(*a);
-	*b = ft_rotate(*b);
-	write(1, "rr\n", 3);
-}
+#include "push_swap.h"
 
 t_stack	*ft_rotate(t_stack *stack)
 {
@@ -57,3 +30,28 @@ t_stack	*ft_rotate(t_stack *stack)
 	node ->next = NULL;
 	return (first);
 }
+void	ra(t_stack **a)
+{
+	if (!a || !*a)
+		return ;
+	ft_rotate(*a);
+	write(1, "ra\n", 3);
+}
+
+void	rb(t_stack **b)
+{
+	if (!b || !*b)
+		return ;
+	ft_rotate(*b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_stack **a, t_stack **b)
+{
+	if (!b || !a || !*b || !*a)
+		return ;
+	ft_rotate(*a);
+	ft_rotate(*b);
+	write(1, "rr\n", 3);
+}
+

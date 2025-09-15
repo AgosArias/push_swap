@@ -10,3 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void	ft_sort_small(t_stack **stack_a)
+{
+	int	size;
+
+	size = ft_stacksize(*stack_a);
+	if (ft_be_sorted(*stack_a))
+		return ;
+	else if (size == 2 && !ft_be_sorted(*stack_a))
+		sa(*stack_a);
+	else if (size == 3)
+		ft_sort_3(stack_a);
+}

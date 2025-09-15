@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
 t_stack	*ft_create_stack( char **str)
 {
@@ -71,7 +71,7 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 	new -> prev = node;
 }
 
-void	ft_stackadd_front(t_stack **stack, t_stack *new)
+/*void	ft_stackadd_front(t_stack **stack, t_stack *new)
 {
 	if (stack && new)
 	{
@@ -79,3 +79,4 @@ void	ft_stackadd_front(t_stack **stack, t_stack *new)
 		*stack = new;
 	}
 }
+*/

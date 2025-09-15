@@ -28,29 +28,27 @@ t_stack	*ft_reverse_rotate(t_stack *stack)
 	return (stack);
 }
 
-t_stack	*rra(t_stack *a)
+void	rra(t_stack **a)
 {
-	if (!a)
-		return (NULL);
-	a = ft_reverse_rotate(a);
+	if (!a || !*a)
+		return ;
+	ft_reverse_rotate(*a);
 	write(1, "rra\n", 4);
-	return (a);
 }
 
-t_stack	*rrb(t_stack *b)
+void	rrb(t_stack **b)
 {
-	if (!b)
-		return (NULL);
-	b = ft_reverse_rotate(b);
+	if (!b || !*b)
+		return ;
+	ft_reverse_rotate(*b);
 	write(1, "rra\n", 4);
-	return (b);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
 	if (!a || !b || !*a || !*b)
 		return ;
-	*a = ft_reverse_rotate(*a);
-	*b = ft_reverse_rotate(*b);
+	ft_reverse_rotate(*a);
+	ft_reverse_rotate(*b);
 	write(1, "rrr\n", 4);
 }
