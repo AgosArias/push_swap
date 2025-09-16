@@ -51,14 +51,18 @@ void	ft_do_cheapest_move(t_stack **stack_a, t_stack **stack_b, int cost_a, int c
 
 void	ft_get_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*node;
+	t_stack	*best;
+	t_stack	*tmp;
 
-	node = *stack_b;
-	while (stack_b)
+	if (!stack_b || !*stack_b)
+		return ;
+	best = *stack_b;
+	tmp = *stack_b;
+	while (tmp)
 	{
-		if (node->total_cost < (*stack_b)->total_cost)
-			node = *stack_b;
-		*stack_b = (*stack_b)->next;
+		if (tmp->total_cost < best->total_cost)
+			best = tmp;
+		tmp = tmp->next;
 	}
-	ft_do_cheapest_move(stack_a, stack_b, node->cost_a, node->cost_b);
+	ft_do_cheapest_move(stack_a, stack_b, best->cost_a, best->cost_b);
 }

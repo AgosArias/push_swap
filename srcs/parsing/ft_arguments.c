@@ -58,14 +58,17 @@ char	**get_arguments(char **arg, int argc)
 		arguments = ft_split(*arg, ' ');
 	else
 	{
-		arguments = (char **)malloc(sizeof(char *) * argc);
-		i = 0;		
+		arguments = (char **)malloc(sizeof(char *) * (argc + 1));
+		if (!arguments)
+			return (NULL);
+		i = 0;
 		while (*arg)
 		{
 			arguments[i] = ft_strdup(*arg);
 			i++;
 			arg++;
 		}
+		arguments[i] = NULL;
 	}
 	if (ft_check_duplicates(arguments) == 1)
 	{

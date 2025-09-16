@@ -14,41 +14,41 @@
 
 t_stack	*ft_reverse_rotate(t_stack *stack)
 {
-	t_stack	*first;
+	t_stack	*node;
 
-	if (!stack)
-		return (NULL);
-	first = stack;
-	while (stack -> next)
-		stack = stack->next;
-	stack -> prev -> next = NULL;
-	stack -> prev = NULL;
-	stack -> next = first;
-	first -> prev = stack;
-	return (stack);
+	if (!stack || !stack->next)
+		return (stack);
+	node = stack;
+	while (node -> next)
+		node = node->next;
+	node -> prev -> next = NULL;
+	node -> prev = NULL;
+	node -> next = stack;
+	stack -> prev = node;
+	return (node);
 }
 
 void	rra(t_stack **a)
 {
-	if (!a || !*a)
+	if (!a || !*a || !(*a)->next)
 		return ;
-	ft_reverse_rotate(*a);
+	*a = ft_reverse_rotate(*a);
 	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **b)
 {
-	if (!b || !*b)
-		return ;
-	ft_reverse_rotate(*b);
-	write(1, "rra\n", 4);
+    if (!b || !*b || !(*b)->next)
+        return ;
+    *b =ft_reverse_rotate(*b);
+    write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	if (!a || !b || !*a || !*b)
+	if (!a || !b || !*a || !*b || !(*a)->next || !(*b)->next)
 		return ;
-	ft_reverse_rotate(*a);
-	ft_reverse_rotate(*b);
+	*a =ft_reverse_rotate(*a);
+	*b =ft_reverse_rotate(*b);
 	write(1, "rrr\n", 4);
 }

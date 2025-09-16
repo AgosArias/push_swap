@@ -35,12 +35,17 @@ int	ft_get_target_pos(t_stack **stack_a, t_stack **stack_b)
 
 void	ft_asign_target(t_stack **stack_a, t_stack **stack_b)
 {
+	t_stack	*tmp_b;
+
 	ft_normalize_stack(stack_a);
 	ft_normalize_stack(stack_b);
-	while (*stack_b)
+	if (!stack_b || !*stack_b)
+		return ;
+	tmp_b = *stack_b;
+	while (tmp_b)
 	{
-		(*stack_b)->target_pos = ft_get_target_pos(stack_a, stack_b);
-		*stack_b = (*stack_b)->next;
+		tmp_b->target_pos = ft_get_target_pos(stack_a, &tmp_b);
+		tmp_b = tmp_b->next;
 	}
 }
 

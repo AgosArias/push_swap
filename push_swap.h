@@ -48,6 +48,7 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_small(t_stack **stack_a);
 void	ft_sort_3(t_stack **stack_a);
 void	ft_do_cheapest_move(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
+void	ft_get_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 void	ft_asign_target(t_stack **stack_a, t_stack **stack_b);
 void	ft_cost(t_stack **stack_a, t_stack **stack_b);
 int		ft_head_is_max(t_stack *stack);
