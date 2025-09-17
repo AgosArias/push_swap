@@ -43,6 +43,7 @@ int	ft_get_total_cost(t_stack *node)
 	else
 		return (ft_abs(cost_a) + ft_abs(cost_b));
 }
+
 void	ft_cost(t_stack **stack_a, t_stack **stack_b)
 {
 	int		size_a;
@@ -64,4 +65,3 @@ void	ft_cost(t_stack **stack_a, t_stack **stack_b)
 		tmp_b = tmp_b->next;
 	}
 }
-

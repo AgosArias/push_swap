@@ -12,30 +12,8 @@
 
 #include "push_swap.h"
 
-void	ft_do_cheapest_move(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b)
+void	ft_move_stack_b(t_stack **stack_b, int cost_b)
 {
-	while (cost_a > 0 && cost_b > 0)
-	{
-		rr(stack_a, stack_b);
-		cost_a--;
-		cost_b--;
-	}
-	while (cost_a < 0 && cost_b < 0)
-	{
-		rrr(stack_a, stack_b);
-		cost_a++;
-		cost_b++;
-	}
-	while (cost_a > 0)
-	{
-		ra(stack_a);
-		cost_a--;
-	}
-	while (cost_a < 0)
-	{
-		rra(stack_a);
-		cost_a++;
-	}
 	while (cost_b > 0)
 	{
 		rb(stack_b);
@@ -46,7 +24,39 @@ void	ft_do_cheapest_move(t_stack **stack_a, t_stack **stack_b, int cost_a, int c
 		rrb(stack_b);
 		cost_b++;
 	}
-	pa(stack_a, stack_b);
+}
+
+void	ft_move_stack_a(t_stack **stack_a, int cost_a)
+{
+	while (cost_a > 0)
+	{
+		ra(stack_a);
+		cost_a--;
+	}
+	while (cost_a < 0)
+	{
+		rra(stack_a);
+		cost_a++;
+	}
+}
+
+void	ft_do_cheapest_move(t_stack **a, t_stack **b, int cost_a, int cost_b)
+{
+	while (cost_a > 0 && cost_b > 0)
+	{
+		rr(a, b);
+		cost_a--;
+		cost_b--;
+	}
+	while (cost_a < 0 && cost_b < 0)
+	{
+		rrr(a, b);
+		cost_a++;
+		cost_b++;
+	}
+	ft_move_stack_a(a, cost_a);
+	ft_move_stack_b(b, cost_b);
+	pa(a, b);
 }
 
 void	ft_get_cheapest_move(t_stack **stack_a, t_stack **stack_b)

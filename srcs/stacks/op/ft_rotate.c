@@ -30,6 +30,7 @@ t_stack	*ft_rotate(t_stack *stack)
 	head ->next = NULL;
 	return (stack);
 }
+
 void	ra(t_stack **a)
 {
 	if (!a || !*a || !(*a)->next)
@@ -42,16 +43,15 @@ void	rb(t_stack **b)
 {
 	if (!b || !*b || !(*b)->next)
 		return ;
-	*b =ft_rotate(*b);
+	*b = ft_rotate(*b);
 	write(1, "rb\n", 3);
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
-	if (!b || !a || !*b || !*a || !(*a)->next|| !(*b)->next)
+	if (!b || !a || !*b || !*a || !(*a)->next || !(*b)->next)
 		return ;
 	*a = ft_rotate(*a);
-	*b =ft_rotate(*b);
+	*b = ft_rotate(*b);
 	write(1, "rr\n", 3);
 }
-

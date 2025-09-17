@@ -30,7 +30,6 @@ int	main( int argc, char **argv)
 	stack_b = NULL;
 	ft_add_index(stack_a);
 	ft_sort(&stack_a, &stack_b);
-	//ft_print_stack(stack_a);
 	ft_free_stack(&stack_a);
 	ft_free_stack(&stack_b);
 	return (0);

@@ -38,17 +38,17 @@ void	rra(t_stack **a)
 
 void	rrb(t_stack **b)
 {
-    if (!b || !*b || !(*b)->next)
-        return ;
-    *b =ft_reverse_rotate(*b);
-    write(1, "rrb\n", 4);
+	if (!b || !*b || !(*b)->next)
+		return ;
+	*b = ft_reverse_rotate(*b);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
 	if (!a || !b || !*a || !*b || !(*a)->next || !(*b)->next)
 		return ;
-	*a =ft_reverse_rotate(*a);
-	*b =ft_reverse_rotate(*b);
+	*a = ft_reverse_rotate(*a);
+	*b = ft_reverse_rotate(*b);
 	write(1, "rrr\n", 4);
 }

@@ -14,7 +14,7 @@
 
 char	*ft_strchr(char *s, int c)
 {
-	int	count;
+	int		count;
 	char	*d;
 
 	if (!s)
@@ -31,4 +31,3 @@ char	*ft_strchr(char *s, int c)
 		return (&d[count]);
 	return (NULL);
 }
-

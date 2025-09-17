@@ -19,7 +19,7 @@ t_stack	*ft_create_stack( char **str)
 
 	if (!str || !*str || !**str)
 	{
-		printf("[null]\n");
+		write(1, "[null]\n", 7);
 		return (NULL);
 	}
 	node = NULL;
