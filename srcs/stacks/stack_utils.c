@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agossariass <agossariass@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:44:25 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/09/01 18:49:19 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/09/17 17:26:05 by agossariass      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
 void	ft_free_stack(t_stack **stack)
 {

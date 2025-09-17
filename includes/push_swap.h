@@ -63,7 +63,6 @@ int		ft_add_index(t_stack *stack);
 /*FT in srcs/stacks*/
 t_stack	*ft_create_stack( char **str);
 void	ft_free_stack(t_stack **stack);
-void	ft_print_stack(t_stack *stack); //DELETE
 int		ft_stacksize(t_stack *stack);
 int		ft_be_sorted(t_stack *stack);
 t_stack	*ft_stacknew(int content);

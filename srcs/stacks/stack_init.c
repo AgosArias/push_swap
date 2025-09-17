@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agossariass <agossariass@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:44:25 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/09/01 18:48:36 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/09/17 17:26:33 by agossariass      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,3 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 	node -> next = new;
 	new -> prev = node;
 }
-
-/*void	ft_stackadd_front(t_stack **stack, t_stack *new)
-{
-	if (stack && new)
-	{
-		new->next = *stack;
-		*stack = new;
-	}
-}
-*/

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarias-d <aarias-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: agossariass <agossariass@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:50:53 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/09/01 18:51:36 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/09/17 17:26:23 by agossariass      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../push_swap.h"
+#include "push_swap.h"
 
 t_stack	*ft_reverse_rotate(t_stack *stack)
 {

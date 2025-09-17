@@ -1,16 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_arguments.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarias-d <aarias-d@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: agossariass <agossariass@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:51 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/05/29 17:23:14 by aarias-d         ###   ########.fr       */
+/*   Updated: 2025/09/17 17:28:07 by agossariass      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_check_number(char **lst)
+{
+	int	result;
+
+	result = 1;
+	if (!lst || !*lst)
+		return (1);
+	while (**lst == ' ' || **lst == '\t')
+		lst++;
+	if (**lst == '+' || **lst == '-')
+		lst++;
+	while (**lst)
+	{
+		if (ft_isdigit(**lst))
+			result = 0;
+		else
+			return (1);
+		lst++;
+	}
+	return (result);
+}
 
 int	ft_check_duplicates(char **lst)
 {
@@ -70,7 +92,7 @@ char	**get_arguments(char **arg, int argc)
 		}
 		arguments[i] = NULL;
 	}
-	if (ft_check_duplicates(arguments) == 1)
+	if (ft_check_duplicates(arguments) == 1 && ft_check_number(arguments) == 1)
 	{
 		ft_free_strings(arguments);
 		return (NULL);
