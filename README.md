@@ -1,6 +1,3 @@
-+45
--0
-
 # push_swap
 
 Proyecto de 42 que ordena una pila de números utilizando un conjunto limitado de operaciones. El objetivo es producir la secuencia más corta posible de movimientos para dejar la pila A en orden ascendente.
@@ -12,6 +9,15 @@ Proyecto de 42 que ordena una pila de números utilizando un conjunto limitado d
 - **srcs/stacks/**: Creación y utilidades de la estructura de pila, así como las operaciones obligatorias (`sa`, `pb`, `ra`, etc.).
 - **srcs/algo/**: Funciones de ordenación para casos pequeños y utilidades para el algoritmo general.
 - **util/**: Funciones auxiliares como comprobación de si la pila está ordenada.
+
+## 🧩 Operaciones soportadas
+
+- `sa`, `sb`, `ss` — swap
+- `pa`, `pb` — push entre pilas
+- `ra`, `rb`, `rr` — rotate
+- `rra`, `rrb`, `rrr` — reverse rotate
+
+El programa escribe por stdout la secuencia de operaciones necesarias para ordenar.
 
 ## ⚙️ Compilación
 
@@ -30,22 +36,20 @@ make test       # Prueba rápida con 100 números aleatorios
 ./push_swap "3 2 1"
 ```
 
-El programa imprimirá las operaciones necesarias para ordenar los valores.
-
-## 📦 Funcionamiento
-
-1. **Parsing**: Validación de números, gestión de argumentos y comprobación de duplicados.
-2. **Construcción de pilas**: Se inicializa `stack_a` con los valores de entrada e `index` para cada nodo.
-3. **Algoritmo**:
-   - Casos pequeños (≤5 números) resueltos con funciones específicas (`ft_sort_3`, `ft_sort_4`).
-   - Casos grandes: se asignan índices y se emplea una estrategia para mover elementos entre `stack_a` y `stack_b` antes de reinsertarlos ordenados.
-4. **Operaciones**: Todas las acciones (`sa`, `pb`, `rra`, etc.) se registran como salida.
-
-## 🧪 Tests
-
-Puedes generar conjuntos de prueba mayores y verificar el número de instrucciones:
-
 ```bash
-ARG=$(seq 1 100 | shuf | tr '\n' ' ')
-./push_swap $ARG | wc -l    # Cuenta de movimientos
+# 100 números únicos aleatorios del rango 0..500
+./push_swap $(shuf -i 0-500 -n 100) | grep -E '^(sa|sb|ss|pa|pb|ra|rb|rr|rra|rrb|rrr)$' | wc -l
+
+# Entrada ya ordenada (debería devolver 0 movimientos)
+./push_swap $(seq 0 500) | grep -E '^(sa|sb|ss|pa|pb|ra|rb|rr|rra|rrb|rrr)$' | wc -l
+
 ```
+
+## 🧠 Resumen del algoritmo
+
+1. Parsing y validación: argumentos, duplicados y creación de `stack_a`.
+2. Indexado: se asigna a cada nodo un índice relativo (1..N) según su valor.
+3. Caso pequeño: si `A` tiene ≤ 3 elementos, se ordena con reglas específicas.
+4. Fase 1: mover desde `A` a `B` hasta dejar 3 en `A`.
+5. Fase 2: para cada nodo en `B`, calcular posición objetivo en `A`, costes `cost_a/cost_b` y escoger el nodo de coste total mínimo para reinserción.
+6. Rotación final: alinear mínimo en cabeza de `A`.
