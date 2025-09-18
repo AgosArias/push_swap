@@ -32,11 +32,6 @@ make test       # Prueba rápida con 100 números aleatorios
 ## 🚀 Uso
 
 ```bash
-./push_swap 2 1 3 6 5 8
-./push_swap "3 2 1"
-```
-
-```bash
 # 100 números únicos aleatorios del rango 0..500
 ./push_swap $(shuf -i 0-500 -n 100) | grep -E '^(sa|sb|ss|pa|pb|ra|rb|rr|rra|rrb|rrr)$' | wc -l
 
