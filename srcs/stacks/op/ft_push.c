@@ -20,6 +20,8 @@ void	pb(t_stack **a, t_stack **b)
 		return ;
 	node = *a;
 	*a = (*a)->next;
+	if (*a)
+		(*a)->prev = NULL;
 	node->next = *b;
 	node ->prev = NULL;
 	if (*b)
@@ -36,6 +38,8 @@ void	pa(t_stack **a, t_stack **b)
 		return ;
 	node = *b;
 	*b = (*b)->next;
+	if (*b)
+		(*b)->prev = NULL;
 	node->next = *a;
 	node ->prev = NULL;
 	if (*a)
