@@ -15,16 +15,10 @@
 void	ft_sort_3(t_stack **stack_a)
 {
 	if (ft_head_is_max(*stack_a))
-	{
 		ra(stack_a);
-		sa(*stack_a);
-	}
 	else if (ft_head_is_max((*stack_a)->next))
-	{
 		rra(stack_a);
-		sa(*stack_a);
-	}
-	else if (ft_be_swapped_a(*stack_a))
+	if (ft_be_swapped_a(*stack_a))
 		sa(*stack_a);
 }
 
