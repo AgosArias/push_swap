@@ -47,7 +47,7 @@ int	ft_head_is_max(t_stack *stack)
 	if (!stack)
 		return (0);
 	node = stack ->next;
-	while (node->next)
+	while (node)
 	{
 		if (node->index > stack->index)
 			return (0);

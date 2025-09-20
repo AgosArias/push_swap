@@ -8,7 +8,6 @@ Proyecto de 42 que ordena una pila de números utilizando un conjunto limitado d
 - **srcs/parsing/**: Obtención y validación de argumentos de entrada.
 - **srcs/stacks/**: Creación y utilidades de la estructura de pila, así como las operaciones obligatorias (`sa`, `pb`, `ra`, etc.).
 - **srcs/algo/**: Funciones de ordenación para casos pequeños y utilidades para el algoritmo general.
-- **util/**: Funciones auxiliares como comprobación de si la pila está ordenada.
 
 ## 🧩 Operaciones soportadas
 
@@ -37,6 +36,9 @@ make test       # Prueba rápida con 100 números aleatorios
 
 # Entrada ya ordenada (debería devolver 0 movimientos)
 ./push_swap $(seq 0 500) | grep -E '^(sa|sb|ss|pa|pb|ra|rb|rr|rra|rrb|rrr)$' | wc -l
+
+ #checker
+ARG=$(seq 0 500); ./push_swap $ARG | ./checker_linux $ARG
 
 ```
 

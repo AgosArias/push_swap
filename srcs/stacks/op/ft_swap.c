@@ -14,17 +14,17 @@
 
 void	ft_swap(t_stack *a, t_stack *b)
 {
-	t_stack	*x;
+	int	index;
+	int	content;
 
 	if (!a || !b)
 		return ;
-	x = ft_stacknew(0);
-	x -> content = a -> content;
-	x -> index = a -> index;
+	content = a -> content;
+	index = a -> index;
 	a -> content = b -> content;
 	a -> index = b -> index;
-	b -> content = x -> content;
-	b -> index = x -> index;
+	b -> content = content;
+	b -> index = index;
 }
 
 void	sa(t_stack *stack)

@@ -20,16 +20,16 @@ int	ft_check_number(char **lst)
 	if (!lst || !*lst)
 		return (1);
 	while (**lst == ' ' || **lst == '\t')
-		lst++;
+		(*lst)++;
 	if (**lst == '+' || **lst == '-')
-		lst++;
+		(*lst)++;
 	while (**lst)
 	{
 		if (ft_isdigit(**lst))
 			result = 0;
 		else
 			return (1);
-		lst++;
+		(*lst)++;
 	}
 	return (result);
 }

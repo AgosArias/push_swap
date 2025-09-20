@@ -10,11 +10,32 @@ CC      := cc
 CFLAGS  := -Wall -Wextra -Werror -Iincludes
 
 # ──────📁 SOURCE FILES ──────
-SRC := $(shell find . -type f -name "*.c")
+SRC :=  main.c \
+srcs/stacks/stack_utils.c \
+srcs/stacks/op/ft_push.c \
+srcs/stacks/op/ft_rotate.c \
+srcs/stacks/op/ft_reverse_rotate.c \
+srcs/stacks/op/ft_swap.c \
+srcs/stacks/stack_init.c \
+srcs/algo/choose_best_move.c \
+srcs/algo/sort_three.c \
+srcs/algo/sort_small.c \
+srcs/algo/ft_sorted.c \
+srcs/algo/cost_utils.c \
+srcs/algo/cost_calc.c \
+srcs/parsing/ft_arguments.c \
+srcs/parsing/ft_add_index.c \
+libft/ft_split.c \
+libft/ft_strlen.c \
+libft/ft_substr.c \
+libft/ft_atoi.c \
+libft/ft_strchar.c \
+libft/ft_strdup.c \
+libft/ft_isdigit.c
 
 # ──────🧱 OBJECTS & HEADERS ──────
 OBJ     := $(SRC:.c=.o)
-DEPS    := push_swap.h
+DEPS    := includes/push_swap.h
 
 # ──────🧹 CLEANUP ──────
 RM      := rm -f

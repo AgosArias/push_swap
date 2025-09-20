@@ -33,7 +33,6 @@ typedef struct s_stack
 
 /*FT in LIBFT*/
 char	*ft_strchr(char *s, int c);
-char	*ft_strchr(char *s, int c);
 char	*ft_strdup(char *src);
 size_t	ft_strlen(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
