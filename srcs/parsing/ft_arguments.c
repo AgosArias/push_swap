@@ -6,7 +6,7 @@
 /*   By: agossariass <agossariass@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:51 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/09/17 17:28:07 by agossariass      ###   ########.fr       */
+/*   Updated: 2025/09/20 14:47:43 by agossariass      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	**get_arguments(char **arg, int argc)
 		}
 		arguments[i] = NULL;
 	}
-	if (ft_check_duplicates(arguments) == 1 && ft_check_number(arguments) == 1)
+	if (ft_check_duplicates(arguments) == 1 || ft_check_number(arguments) == 1)
 	{
 		ft_free_strings(arguments);
 		return (NULL);
