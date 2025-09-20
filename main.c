@@ -30,11 +30,11 @@ int	main( int argc, char **argv)
 	}
 	stack_a = ft_create_stack(arg);
 	ft_free_strings(arg);
-		if (!stack_a)
-		{
-			write(2, "Error\n", 6);
-			return (1);
-		}
+	if (!stack_a)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 	stack_b = NULL;
 	ft_add_index(stack_a);
 	ft_sort(&stack_a, &stack_b);
