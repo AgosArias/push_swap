@@ -6,7 +6,7 @@
 /*   By: agossariass <agossariass@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:39:54 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/09/17 17:26:00 by agossariass      ###   ########.fr       */
+/*   Updated: 2025/09/21 20:47:35 by agossariass      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ int	main( int argc, char **argv)
 		return (0);
 	argv++;
 	arg = get_arguments(argv, argc - 1);
-	if (arg == NULL)
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
 	stack_a = ft_create_stack(arg);
 	ft_free_strings(arg);
 	if (!stack_a)

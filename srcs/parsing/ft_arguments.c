@@ -6,19 +6,26 @@
 /*   By: agossariass <agossariass@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:51:51 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/09/21 20:29:40 by agossariass      ###   ########.fr       */
+/*   Updated: 2025/09/21 20:58:37 by agossariass      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_str_end(char *str)
+{
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str != '\0')
+		return (1);
+	return (0);
+}
 
 int	ft_check_int(char *str)
 {
 	long	num;
 	int		sign;
 
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
 	sign = 1;
 	if (*str == '+')
 		str++;
@@ -37,9 +44,7 @@ int	ft_check_int(char *str)
 			return (1);
 		str++;
 	}
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str != '\0')
+	if (ft_str_end(str))
 		return (1);
 	return (0);
 }
@@ -55,6 +60,8 @@ int	ft_check_number(char **lst)
 	while (lst[x])
 	{
 		y = x + 1;
+		while ((*lst[x] >= 9 && *lst[x] <= 13) || *lst[x] == 32)
+			lst[x]++;
 		if (ft_check_int(lst[x]) == 1)
 			return (1);
 		while (lst[y])
@@ -104,7 +111,7 @@ char	**get_arguments(char **arg, int argc)
 		}
 		arguments[i] = NULL;
 	}
-	if (ft_check_number(arguments) == 1 )
+	if (ft_check_number(arguments) == 1)
 	{
 		ft_free_strings(arguments);
 		return (NULL);
