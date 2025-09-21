@@ -6,7 +6,7 @@
 /*   By: agossariass <agossariass@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 18:44:25 by aarias-d          #+#    #+#             */
-/*   Updated: 2025/09/17 17:26:33 by agossariass      ###   ########.fr       */
+/*   Updated: 2025/09/21 21:01:28 by agossariass      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ t_stack	*ft_create_stack( char **str)
 	t_stack	*node;
 
 	if (!str || !*str || !**str)
-	{
-		write(1, "[null]\n", 7);
 		return (NULL);
-	}
 	node = NULL;
 	while (*str)
 	{
